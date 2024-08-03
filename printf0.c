@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include "main.h"
 
 int _printf(const char *format, ...) {
     va_list args;
@@ -49,19 +50,4 @@ int _printf(const char *format, ...) {
 
     va_end(args);
     return count;
-}
-
-int main() {
-    int len;
-
-    len = _printf("Hello, %s!\n", "world");
-    printf("Printed %d characters.\n", len);
-
-    len = _printf("Character: %c\n", 'A');
-    printf("Printed %d characters.\n", len);
-
-    len = _printf("Percent sign: %%\n");
-    printf("Printed %d characters.\n", len);
-
-    return 0;
 }
